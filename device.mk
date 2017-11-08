@@ -14,6 +14,28 @@
 # limitations under the License.
 #
 
+GAPPS_VARIANT := micro
+PRODUCT_PACKAGES += Maps
+PRODUCT_PACKAGES += Photos
+PRODUCT_PACKAGES += YouTube
+PRODUCT_PACKAGES += Chrome
+PRODUCT_PACKAGES += Docs
+PRODUCT_PACKAGES += Drive
+PRODUCT_PACKAGES += Keep
+PRODUCT_PACKAGES += PlayGames
+PRODUCT_PACKAGES += Sheets
+PRODUCT_PACKAGES += ContactsGoogle
+PRODUCT_PACKAGES += DialerGoogle
+PRODUCT_PACKAGES += PixelLauncher
+PRODUCT_PACKAGES += PixelIcons
+PRODUCT_PACKAGES += Wallpapers
+PRODUCT_PACKAGES += AndroidPay
+PRODUCT_PACKAGES += Translate
+GAPPS_EXCLUDED_PACKAGES := GoogleNow
+GAPPS_FORCE_DIALER_OVERRIDES := true
+GAPPS_FORCE_BROWSER_OVERRIDES := true
+GAPPS_FORCE_PIXEL_LAUNCHER := true
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Get non-open-source specific aspects
@@ -43,3 +65,5 @@ PRODUCT_COPY_FILES += \
 
 # Common hlte
 $(call inherit-product, device/samsung/hlte-common/hlte.mk)
+
+$(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
